@@ -1,0 +1,3 @@
+all:
+	circleci config validate
+
