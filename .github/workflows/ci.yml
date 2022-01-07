@@ -35,6 +35,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: printenv
+        run: |
+          printenv
+
       - name: Stars and forks
         run: |
           STARS=$(jq --raw-output .repository.stargazers "${{ github.event_path }}")
