@@ -29,3 +29,13 @@ jobs:
       - name: Run a multi-line script
         run: |
           curl -sSL -4 icanhazip.com
+
+  # https://github.com/actions/runner         
+  my-self_hosted-run:
+    needs: build
+    runs-on: self-hosted
+
+    steps:
+      - name: Run a multi-line script
+        run: |
+          dig +short myip.opendns.com @resolver1.opendns.com
